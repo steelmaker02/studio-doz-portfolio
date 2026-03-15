@@ -3,8 +3,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [tailwindcss()],
-  base: '/ studio - doz - portfolio /',
+  base: '/studio-doz-portfolio/',
   build: {
-    outDir: 'dist',
+    outDir: 'dist', 
   }
 });
