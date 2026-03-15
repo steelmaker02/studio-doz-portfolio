@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Studio DOZ. Zeitgenössisches Fotostudio für minimalistische visuelle Erzählungen in Berlin." />
+  <link rel="icon" href="./assets/favicon-Otp8xz_c.svg" type="image/svg+xml" />
+  <title>Fotogalerie by DOZ.</title>
+  <script type="module" crossorigin src="./assets/index-CF7Q6izD.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C6x6pofL.css">
+</head>
+
+<body class="bg-[#F7F7F7] text-[#050505] font-sans selection:bg-[#050505] selection:text-[#F7F7F7]">
+  <div id="preloader"
+    class="fixed inset-0 z-[200] bg-[#F7F7F7] flex items-center justify-center transition-opacity duration-700 ease-in-out">
+    <div class="w-16 h-16 spin-slow">
+      <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3e%3cstyle%3e%20rect%20{%20stroke:%20black;%20}%20@media%20(prefers-color-scheme:%20dark)%20{%20rect%20{%20stroke:%20white;%20}%20}%20%3c/style%3e%3crect%20x='10'%20y='10'%20width='44'%20height='44'%20fill='none'%20stroke-width='4'/%3e%3c/svg%3e" alt="Loading" class="w-full h-full opacity-100 invert-to-black" />
+    </div>
+  </div>
+  <div class="min-h-screen relative">
+    <header id="header"
+      class="fixed w-full top-0 z-[60] transition-colors duration-300 px-6 md:px-12 flex justify-between items-center h-[60px] md:h-[72px] bg-transparent">
+      <button id="logo-btn"
+        class="font-semibold text-sm tracking-tight uppercase text-left hover:opacity-50 transition-opacity duration-200 cursor-pointer">
+        Studio<br />DOZ.
+      </button>
+      <nav class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-tight relative z-50">
+        <div class="relative">
+          <button id="gallery-menu-btn"
+            class="hover:opacity-50 transition-opacity uppercase duration-200 cursor-pointer">
+            Galerie
+          </button>
+          <div id="gallery-dropdown"
+            class="absolute top-full right-0 md:left-0 mt-4 bg-[#F7F7F7] border border-[#050505] flex flex-col min-w-[160px] shadow-none opacity-0 pointer-events-none translate-y-2 transition-all duration-300">
+          </div>
+        </div>
+        <button id="info-btn"
+          class="hover:opacity-50 transition-opacity uppercase duration-200 cursor-pointer">Info</button>
+        <button id="contact-btn"
+          class="hover:opacity-50 transition-opacity uppercase duration-200 cursor-pointer">Kontakt</button>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden hover:opacity-50 transition-opacity duration-200 cursor-pointer"
+        aria-label="Menü öffnen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" x2="20" y1="12" y2="12" />
+          <line x1="4" x2="20" y1="6" y2="6" />
+          <line x1="4" x2="20" y1="18" y2="18" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="h-screen flex flex-col justify-center p-6 md:p-12 pt-24 relative">
+      <div class="flex-1 flex items-center justify-center">
+        <h1 id="hero-title"
+          class="text-[12vw] leading-[0.85] font-bold tracking-tighter uppercase text-center opacity-0 scale-95 will-change-transform transition-[transform,opacity] duration-[2000ms] ease-[cubic-bezier(0.22,1,0.36,1)]">
+          Visuelle<br />Geschichten
+        </h1>
+      </div>
+      <div class="flex justify-center pb-4 absolute bottom-6 left-0 right-0">
+        <span id="hero-subtitle"
+          class="text-[10px] uppercase tracking-[0.2em] font-semibold opacity-0 transition-opacity duration-1000 cursor-default">
+          Scrollen zum Entdecken
+        </span>
+      </div>
+    </div>
+
+    <div
+      class="sticky top-[60px] md:top-[72px] z-50 bg-[#F7F7F7]/95 backdrop-blur-md border-b border-[#050505]/10 px-6 md:px-12 relative">
+      <div
+        class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#F7F7F7] to-transparent pointer-events-none md:hidden z-10">
+      </div>
+      <div id="category-nav"
+        class="py-4 md:py-6 flex gap-3 md:gap-8 overflow-x-auto no-scrollbar w-full items-center pr-12 md:pr-0">
+      </div>
+    </div>
+
+    <main id="gallery" class="p-6 md:p-12 min-h-[100vh]">
+      <div id="gallery-grid"
+        class="grid grid-cols-2 md:grid-cols-4 auto-rows-[150px] md:auto-rows-[250px] gap-4 md:gap-6 grid-flow-row-dense">
+      </div>
+    </main>
+
+    <div id="floating-nav"
+      class="fixed bottom-6 right-6 md:bottom-12 md:right-12 z-50 flex flex-col gap-2 transition-transform duration-300">
+      <button id="scroll-top-btn" aria-label="Nach oben scrollen"
+        class="cursor-pointer p-3 bg-[#050505] text-[#F7F7F7] border border-[#050505] hover:bg-[#F7F7F7] hover:text-[#050505] transition-all duration-300 shadow-lg opacity-0 pointer-events-none translate-y-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m5 12 7-7 7 7" />
+          <path d="M12 19V5" />
+        </svg>
+      </button>
+
+      <button id="scroll-bottom-btn" aria-label="Nach unten scrollen"
+        class="cursor-pointer hidden lg:block p-3 bg-[#F7F7F7] text-[#050505] border border-[#050505] hover:bg-[#050505] hover:text-[#F7F7F7] transition-all duration-300 shadow-lg opacity-100 translate-y-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 5v14" />
+          <path d="m19 12-7 7-7-7" />
+        </svg>
+      </button>
+    </div>
+
+    <footer class="pt-10 pb-8 px-6 md:px-12 flex flex-col gap-6 border-t border-[#050505]/10 mt-12 overflow-hidden">
+      <a href="mailto:hallo@doz.de" class="block w-full text-center hover:opacity-50 transition-opacity cursor-pointer">
+        <h2
+          class="text-[10.5vw] md:text-[8.5vw] leading-[0.75] font-bold tracking-tighter uppercase whitespace-nowrap pb-0">
+          HALLO@DOZ.DE
+        </h2>
+      </a>
+
+      <div class="flex justify-between items-end text-[10px] uppercase tracking-[0.15em] font-semibold mt-4">
+        <div class="flex flex-col gap-2">
+          <span>© 2026 Studio DOZ.</span>
+          <span>Alle Rechte vorbehalten</span>
+        </div>
+        <div class="flex flex-col gap-2 items-end text-right">
+          <button id="datenschutz-btn"
+            class="hover:opacity-50 transition-opacity text-right uppercase cursor-pointer">Datenschutz</button>
+          <button id="impressum-btn"
+            class="hover:opacity-50 transition-opacity text-right uppercase cursor-pointer">Impressum</button>
+        </div>
+      </div>
+    </footer>
+
+    <div id="mobile-menu-modal"
+      class="fixed inset-0 z-[100] bg-[#F7F7F7] flex flex-col p-6 md:p-12 opacity-0 pointer-events-none -translate-y-5 transition-all duration-300">
+      <div class="flex justify-between items-start mb-12">
+        <button id="mobile-logo-btn"
+          class="font-semibold text-sm tracking-tight uppercase text-left hover:opacity-50 transition-opacity cursor-pointer">
+          Studio<br />DOZ.
+        </button>
+        <button id="close-mobile-menu-btn" class="hover:opacity-50 transition-opacity cursor-pointer"
+          aria-label="Menü schließen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex flex-col justify-center gap-8 text-3xl font-medium uppercase tracking-tight">
+        <button id="mobile-galerie-btn"
+          class="text-left hover:opacity-50 transition-opacity cursor-pointer">Galerie</button>
+        <button id="mobile-info-btn" class="text-left hover:opacity-50 transition-opacity cursor-pointer">Info</button>
+        <button id="mobile-contact-btn"
+          class="text-left hover:opacity-50 transition-opacity cursor-pointer">Kontakt</button>
+      </div>
+    </div>
+
+    <div id="info-modal"
+      class="fixed inset-0 z-[100] bg-[#F7F7F7] flex flex-col p-6 md:p-12 opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="flex justify-between items-start">
+        <div class="font-semibold text-sm tracking-tight uppercase">
+          Studio<br />DOZ.
+        </div>
+        <button id="close-info-btn" class="hover:opacity-50 transition-opacity cursor-pointer"
+          aria-label="Info schließen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center max-w-5xl mx-auto w-full">
+        <div id="info-content"
+          class="flex flex-col gap-8 md:gap-12 w-full opacity-0 translate-y-5 transition-all duration-500 delay-200">
+          <h2 class="text-3xl md:text-5xl lg:text-6xl leading-[1.1] font-medium tracking-tight text-[#050505]">
+            Studio DOZ ist ein zeitgenössisches Fotostudio für minimalistische visuelle Erzählungen.
+          </h2>
+          <div class="h-[1px] w-full max-w-md bg-[#050505]/20"></div>
+          <p class="text-lg md:text-xl lg:text-2xl text-[#050505]/70 leading-relaxed max-w-3xl font-normal">
+            Unsere Arbeiten bewegen sich zwischen Architektur, Editorial und stiller Beobachtung. Wir glauben an
+            Klarheit, Raum und Reduktion &mdash; Bilder, die wirken, ohne laut zu sein.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact-modal"
+      class="fixed inset-0 z-[100] bg-[#050505] text-[#F7F7F7] flex flex-col p-6 md:p-12 opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="flex justify-between items-start">
+        <div class="font-semibold text-sm tracking-tight uppercase">
+          Studio<br />DOZ.
+        </div>
+        <button id="close-contact-btn" class="hover:opacity-50 transition-opacity cursor-pointer"
+          aria-label="Kontakt schließen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center max-w-3xl mx-auto w-full">
+        <form id="contact-form"
+          class="w-full flex flex-col gap-8 md:gap-12 opacity-0 translate-y-5 transition-all duration-500 delay-200">
+          <div class="flex flex-col gap-2">
+            <label for="form-name"
+              class="text-xs uppercase tracking-widest font-semibold text-[#F7F7F7]/70 cursor-pointer">Name</label>
+            <input id="form-name" type="text" required
+              class="bg-transparent border-b border-[#F7F7F7]/30 py-2 md:py-4 outline-none focus:border-[#F7F7F7] transition-colors text-lg md:text-xl text-[#F7F7F7]" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="form-email"
+              class="text-xs uppercase tracking-widest font-semibold text-[#F7F7F7]/70 cursor-pointer">E-Mail</label>
+            <input id="form-email" type="email" required
+              class="bg-transparent border-b border-[#F7F7F7]/30 py-2 md:py-4 outline-none focus:border-[#F7F7F7] transition-colors text-lg md:text-xl text-[#F7F7F7]" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <label for="form-message"
+              class="text-xs uppercase tracking-widest font-semibold text-[#F7F7F7]/70 cursor-pointer">Nachricht</label>
+            <textarea id="form-message" required rows="4"
+              class="bg-transparent border-b border-[#F7F7F7]/30 py-2 md:py-4 outline-none focus:border-[#F7F7F7] transition-colors text-lg md:text-xl resize-none text-[#F7F7F7]"></textarea>
+          </div>
+          <button type="submit"
+            class="self-start border border-[#F7F7F7] px-8 md:px-12 py-3 md:py-4 text-xs uppercase tracking-widest font-semibold hover:bg-[#F7F7F7] hover:text-[#050505] transition-colors cursor-pointer">
+            Senden
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="datenschutz-modal"
+      class="fixed inset-0 z-[100] bg-[#F7F7F7] flex flex-col p-6 md:p-12 opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="flex justify-between items-start mb-12">
+        <div class="font-semibold text-sm tracking-tight uppercase">Datenschutz</div>
+        <button id="close-datenschutz-btn" class="hover:opacity-50 transition-opacity cursor-pointer"
+          aria-label="Datenschutz schließen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto no-scrollbar max-w-3xl mx-auto w-full">
+        <div id="datenschutz-content"
+          class="text-sm md:text-base leading-relaxed flex flex-col gap-6 opacity-0 translate-y-5 transition-all duration-500 delay-200">
+          <p><strong>1. Allgemeine Hinweise</strong><br>Diese Website ist ein fiktives Portfolio- und
+            Demonstrationsprojekt
+            eines Webdesigners. Sie dient ausschließlich zu Präsentations- und Lernzwecken und verfolgt keine
+            kommerziellen
+            Interessen.</p>
+          <p><strong>2. Verantwortliche Stelle</strong><br>Studio DOZ (Demo-Projekt), Musterstraße 123, 10115 Berlin,
+            E-Mail: hallo@doz.de</p>
+          <p><strong>3. Hosting</strong><br>Diese Website wird über den Dienst <strong>GitHub Pages</strong>
+            bereitgestellt.
+            Der Anbieter kann technisch notwendige Server-Logfiles erfassen (z. B. IP-Adresse, Zeitpunkt des Zugriffs,
+            Browsertyp). Diese Daten werden ausschließlich zur technischen Bereitstellung der Website verwendet.</p>
+          <p><strong>4. Erhebung personenbezogener Daten</strong><br>Beim Besuch dieser Website werden durch den
+            Betreiber
+            selbst keine personenbezogenen Daten aktiv erhoben.</p>
+          <p><strong>5. Cookies und Tracking</strong><br>Diese Website verwendet keine Cookies, keine
+            Tracking-Technologien
+            und keine Analyse-Tools.</p>
+          <p><strong>6. Kontaktformular</strong><br>Das dargestellte Kontaktformular dient ausschließlich zu
+            Demonstrationszwecken. Die eingegebenen Daten werden nicht an einen Server übertragen und nicht gespeichert.
+          </p>
+          <p><strong>7. Bildnachweise</strong><br>Die verwendeten Fotos stammen von der Plattform
+            <strong>Unsplash</strong>
+            und werden im Rahmen der Unsplash-Lizenz für Demonstrationszwecke verwendet.</p>
+          <p><strong>8. Rechte der betroffenen Personen</strong><br>Da diese Website keine personenbezogenen Daten
+            speichert
+            oder verarbeitet, entfallen Ansprüche auf Auskunft, Löschung oder Berichtigung in der Praxis.</p>
+          <p><strong>9. Hinweis zum Projektstatus</strong><br>Diese Website ist ein nicht-kommerzielles Design- und
+            Lernprojekt.</p>
+          <p><strong>Stand:</strong> März 2026</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="impressum-modal"
+      class="fixed inset-0 z-[100] bg-[#F7F7F7] flex flex-col p-6 md:p-12 opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="flex justify-between items-start mb-12">
+        <div class="font-semibold text-sm tracking-tight uppercase">Impressum</div>
+        <button id="close-impressum-btn" class="hover:opacity-50 transition-opacity cursor-pointer"
+          aria-label="Impressum schließen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 overflow-y-auto no-scrollbar max-w-3xl mx-auto w-full">
+        <div id="impressum-content"
+          class="text-sm md:text-base leading-relaxed flex flex-col gap-6 opacity-0 translate-y-5 transition-all duration-500 delay-200">
+          <p><strong>Angaben gemäß § 5 TMG</strong><br>Studio DOZ (fiktives Projekt)<br>Musterstraße 123, 10115 Berlin,
+            Deutschland</p>
+          <p><strong>Vertreten durch:</strong><br>Max Mustermann</p>
+          <p><strong>Kontakt:</strong><br>E-Mail: hallo@doz.de</p>
+          <p><strong>Projektstatus:</strong><br>Bei dieser Website handelt es sich um ein fiktives Portfolio- und
+            Demonstrationsprojekt. Es besteht kein kommerzieller Zweck.</p>
+          <p><strong>Hosting:</strong><br>Diese Website wird über GitHub Pages gehostet.</p>
+          <p><strong>Bildquellen:</strong><br>Die verwendeten Bilder stammen von der Plattform Unsplash und werden gemäß
+            der
+            Unsplash-Lizenz verwendet.</p>
+          <p><strong>Haftung & Urheberrecht:</strong><br>Für die Richtigkeit der Inhalte wird keine Gewähr übernommen.
+            Die
+            Inhalte unterliegen dem deutschen Urheberrecht.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lightbox-modal"
+      class="fixed inset-0 z-[110] bg-[#050505]/95 backdrop-blur-md flex flex-col items-center justify-center p-4 md:p-12 opacity-0 pointer-events-none transition-opacity duration-300">
+      <button id="close-lightbox-btn" aria-label="Bild schließen"
+        class="absolute top-6 right-6 md:top-12 md:right-12 text-[#F7F7F7] hover:opacity-50 transition-opacity z-10 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+      <div class="relative w-full h-full flex flex-col items-center justify-center">
+        <img id="lightbox-img" src="" alt=""
+          class="max-w-full max-h-[80vh] object-contain shadow-2xl scale-95 transition-transform duration-500" />
+        <div id="lightbox-caption"
+          class="text-[#F7F7F7] text-[10px] md:text-xs uppercase tracking-widest font-semibold mt-6 opacity-0 translate-y-2 transition-all duration-500 delay-100">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
